@@ -29,7 +29,7 @@ echo STATION_NAME=nuc >> ~/stf-poc/.env
 
 cat ~/stf-poc/.env
 
-sudo htpasswd ~/stf-poc/nginx/.htpasswd sammy
+sudo htpasswd -c ~/stf-poc/nginx/.htpasswd sammy
 
 docker-compose up --build
 
