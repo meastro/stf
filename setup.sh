@@ -31,6 +31,8 @@ cat ~/stf-poc/.env
 
 cd ~/stf-poc
 
+docker-compose up --build
+
 
 
 
