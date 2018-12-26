@@ -2,7 +2,7 @@
 sudo apt-get update
 sudo apt-get upgrade
 
-sudo apt-get install git htop apt-transport-https docker docker-compose
+sudo apt-get install apache2-utils git htop apt-transport-https docker docker-compose
 
 sudo echo "deb https://deb.torproject.org/torproject.org stretch main" >> /etc/apt/sources
 
