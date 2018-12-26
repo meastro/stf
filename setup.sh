@@ -1,4 +1,4 @@
-
+#!/bin/bash
 sudo apt-get update
 sudo apt-get upgrade
 
@@ -12,4 +12,19 @@ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 apt-get update
 apt install tor deb.torproject.org-keyring
 
+sudo echo "HiddenServiceDir /var/lib/tor/hidden_service/" > /etc/tor/torcc
+sudo echo "HiddenServicePort 80 127.0.0.1:80" >> /etc/tor/torrc
 
+service tor restart
+cd ~
+git clone https://github.com/reeferdave/stf1.git
+
+ONIONHOST=$(cat /var/lib/tor/hidden_service/hostname)
+SECRET=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w32 | head -n 1)
+
+echo PUBLIC_IP=$ONIONHOST > ~/stf1/.env
+echo SECRET=$SECRET >> ~/stf1/.env
+echo RETHINKDB_PORT_28015_TCP=tcp://rethinkdb:28015 >> ~/stf1/.env
+echo STATION_NAME=nuc >> ~/stf1/.env
+
+cat ~/stf1/.env
