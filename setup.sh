@@ -15,8 +15,8 @@ apt install tor deb.torproject.org-keyring
 echo ENABLING TOR HIDDEN SERVICES
 sudo rm /etc/tor/torrc
 sudo touch /etc/tor/torrc
-sudo echo "HiddenServiceDir /var/lib/tor/hidden_service/" >> /etc/tor/torcc
-sudo echo "HiddenServicePort 80 127.0.0.1:80" >> /etc/tor/torrc
+sudo echo "HiddenServiceDir /var/lib/tor/hidden_service/" >> /etc/tor/torrc
+sudo echo "HiddenServicePort 80 127.0.0.1:80" > /etc/tor/torrc
 
 service tor restart
 cd ~
