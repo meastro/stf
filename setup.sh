@@ -12,6 +12,7 @@ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 apt-get update
 apt install tor deb.torproject.org-keyring
 
+echo ENABLING TOR HIDDEN SERVICES
 sudo echo "HiddenServiceDir /var/lib/tor/hidden_service/" > /etc/tor/torcc
 sudo echo "HiddenServicePort 80 127.0.0.1:80" >> /etc/tor/torrc
 
@@ -22,16 +23,20 @@ git clone https://github.com/reeferdave/stf-poc.git
 ONIONHOST=$(cat /var/lib/tor/hidden_service/hostname)
 SECRET=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w32 | head -n 1)
 
+echo CREATING THE ENV FILE
 echo PUBLIC_IP=$ONIONHOST > ~/stf-poc/.env
 echo SECRET=$SECRET >> ~/stf-poc/.env
 echo RETHINKDB_PORT_28015_TCP=tcp://rethinkdb:28015 >> ~/stf-poc/.env
 echo STATION_NAME=nuc >> ~/stf-poc/.env
 
+echo THE .ENV FILE LOOKS LIKE THIS
 cat ~/stf-poc/.env
 
+echo CREATING USERNAME AND PASSWORD FOR HTPASSWD FILE
 sudo htpasswd -c ~/stf-poc/nginx/.htpasswd sammy
 cd ~/stf-poc
 
+echo RUNNING STF
 docker-compose up --build
 
 
