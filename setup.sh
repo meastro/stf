@@ -4,7 +4,7 @@ sudo apt-get upgrade
 
 sudo apt-get install apache2-utils git htop apt-transport-https docker docker-compose
 
-sudo echo "deb https://deb.torproject.org/torproject.org stretch main" >> /etc/apt/sources.list
+sudo echo "deb https://deb.torproject.org/torproject.org bionic main" >> /etc/apt/sources.list
 
 gpg --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
