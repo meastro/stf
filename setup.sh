@@ -26,7 +26,9 @@ ONIONHOST=$(cat /var/lib/tor/hidden_service/hostname)
 SECRET=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w32 | head -n 1)
 
 echo CREATING THE ENV FILE
-echo PUBLIC_IP=$ONIONHOST > ~/stf-poc/.env
+sudo rm ~/stf-poc/.env
+sudo touch ~/stf-poc/.env
+echo PUBLIC_IP=$ONIONHOST >> ~/stf-poc/.env
 echo SECRET=$SECRET >> ~/stf-poc/.env
 echo RETHINKDB_PORT_28015_TCP=tcp://rethinkdb:28015 >> ~/stf-poc/.env
 echo STATION_NAME=nuc >> ~/stf-poc/.env
