@@ -2,7 +2,7 @@
 sudo apt-get update
 sudo apt-get upgrade
 
-sudo apt-get install apache2-utils git htop apt-transport-https docker docker-compose
+sudo apt-get install vim apache2-utils git htop apt-transport-https docker docker-compose
 
 sudo echo "deb https://deb.torproject.org/torproject.org bionic main" >> /etc/apt/sources.list
 
@@ -13,8 +13,8 @@ apt-get update
 apt install tor deb.torproject.org-keyring
 
 echo ENABLING TOR HIDDEN SERVICES
-sudo rm /etc/tor/torrc
-sudo touch /etc/tor/torrc
+#sudo rm /etc/tor/torrc
+#sudo touch /etc/tor/torrc
 sudo echo "HiddenServiceDir /var/lib/tor/hidden_service/" >> /etc/tor/torrc
 sudo echo "HiddenServicePort 80 127.0.0.1:80" >> /etc/tor/torrc
 
