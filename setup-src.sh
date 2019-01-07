@@ -43,11 +43,11 @@ echo "Installing RethinkDB"
 sudo apt-get install rethinkdb \
 	|| OwnError "Failed to install RethinkDB"
 
-##GraphicsMagick
-#echo "Installing GraphicsMagick"
-#sudo apt-get install graphicsmagick \
-#	|| OwnError "Failed to Install GraphicsMagick"
-#
+#GraphicsMagick
+echo "Installing GraphicsMagick"
+sudo apt-get install graphicsmagick \
+	|| OwnError "Failed to Install GraphicsMagick"
+
 ##ZeroMq
 #echo "add Zeromq repository"
 #echo "deb http://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/ ./" >> /etc/apt/sources.list \
