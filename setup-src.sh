@@ -56,3 +56,13 @@ echo "deb http://download.opensuse.org/repositories/network:/messaging:/zeromq:/
 wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | sudo apt-key add
 sudo apt-get install libzmq3-dev \
         || OwnError "####### Failed to install Zeromq libraries"
+
+#YASM
+echo "Installing YASM"
+sudo apt-get install yasm \
+	|| OwnError "####### Failed to install YASM"
+
+#pkg-config
+echo "Installing pkg-config"
+sudo apt-get install pkg-config \
+	|| OwnError "####### Failed to install pkg-config"
