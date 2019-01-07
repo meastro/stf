@@ -7,6 +7,11 @@ function OwnError()
 	exit $2
 }
 
+# NPM
+echo "Installing NPM"
+sudo apt-get install npm \
+	|| OwnError "####### Failed to install NPM"
+
 # Node JS Install - LTS PPA
 echo "LETS INSTALL NODE JS - LTS PPA"
 echo "Adding Node.js PPA"
@@ -78,4 +83,4 @@ sudo rethinkdb & \
 	|| OwnError "####### Failed to start Rethinkdb"
 
 # Startf STF
-echo "You are ready to start STF"
+echo "!!!! You are ready to start STF !!!!"
