@@ -8,19 +8,19 @@ function OwnError()
 }
 
 # Node JS Install - LTS PPA
-#echo "LETS INSTALL NODE JS - LTS PPA"
-#echo "Adding Node.js PPA"
-#curl -sL https://deb.nodesource.com/setup_8.x | sudo bash - \
-#	|| OwnError "Failed to add Node.js PPA"
-#
-#echo "Installing Node.js"
-#sudo apt-get install nodejs \
-#	|| OwnError "Failed to install Node.js"
-#
-#echo "Checking Node.js Version"
-#node -v \
-#	|| OwnError "Failed to check Node.js version"
-#
+echo "LETS INSTALL NODE JS - LTS PPA"
+echo "Adding Node.js PPA"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo bash - \
+	|| OwnError "Failed to add Node.js PPA"
+
+echo "Installing Node.js"
+sudo apt-get install nodejs \
+	|| OwnError "Failed to install Node.js"
+
+echo "Checking Node.js Version"
+node -v \
+	|| OwnError "Failed to check Node.js version"
+
 ## ADB
 #echo "Installing ADB"
 #sudo apt-get install adb \
