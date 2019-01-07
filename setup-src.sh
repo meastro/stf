@@ -74,7 +74,7 @@ sudo apt-get install pkg-config \
 
 #Install STF
 echo "Installing STF via NPM"
-sudo npm install -g stf \
+sudo npm install -g stf \-allow-root --unsafe-perm
 	|| OwnError "####### Failed to install STF via NPM"
 
 #Start Rethink DB
