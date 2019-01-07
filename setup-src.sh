@@ -26,23 +26,23 @@ echo "Installing ADB"
 sudo apt-get install adb \
 	|| OwnError "Failed to install ADB"
 
-## RethinkDB
-#echo "Installing RethinkDB"
-#source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list \
-#	|| OwnError "Failed to add RethinkDB PPA Source "
-#
-#echo "Installing PPA Key"
-#wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -a \
-#	|| OwnError "Failed to add RethinkDB PPA Key"
-#
-#echo "Updating Package Repository"
-#sudo apt-get update \
-#	|| OwnError "Failed to update package repository"
-#
-#echo "Installing RethinkDB"
-#sudo apt-get install rethinkdb \
-#	|| OwnError "Failed to install RethinkDB"
-#
+# RethinkDB
+echo "Installing RethinkDB"
+source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list \
+	|| OwnError "Failed to add RethinkDB PPA Source "
+
+echo "Installing PPA Key"
+wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -a \
+	|| OwnError "Failed to add RethinkDB PPA Key"
+
+echo "Updating Package Repository"
+sudo apt-get update \
+	|| OwnError "Failed to update package repository"
+
+echo "Installing RethinkDB"
+sudo apt-get install rethinkdb \
+	|| OwnError "Failed to install RethinkDB"
+
 ##GraphicsMagick
 #echo "Installing GraphicsMagick"
 #sudo apt-get install graphicsmagick \
