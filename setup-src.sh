@@ -21,11 +21,11 @@ echo "Checking Node.js Version"
 node -v \
 	|| OwnError "Failed to check Node.js version"
 
-## ADB
-#echo "Installing ADB"
-#sudo apt-get install adb \
-#	|| OwnError "Failed to install ADB"
-#
+# ADB
+echo "Installing ADB"
+sudo apt-get install adb \
+	|| OwnError "Failed to install ADB"
+
 ## RethinkDB
 #echo "Installing RethinkDB"
 #source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list \
