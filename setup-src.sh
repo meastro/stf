@@ -67,4 +67,15 @@ echo "Installing pkg-config"
 sudo apt-get install pkg-config \
 	|| OwnError "####### Failed to install pkg-config"
 
-1
+#Install STF
+echo "Installing STF via NPM"
+sudo npm install -g stf \
+	|| OwnError "####### Failed to install STF via NPM"
+
+#Start Rethink DB
+echo "Starting Rethinkdb"
+sudo rethinkdb & \
+	|| OwnError "####### Failed to start Rethinkdb"
+
+# Startf STF
+echo "You are ready to start STF"
