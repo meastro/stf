@@ -54,4 +54,5 @@ echo "deb http://download.opensuse.org/repositories/network:/messaging:/zeromq:/
 	|| OwnError "Failed to setup repository"
 
 wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | sudo apt-key add
-apt-get install libzmq3-dev
+apt-get install libzmq3-dev \
+        || OwnError "Failed to install Zeromq libraries"
