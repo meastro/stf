@@ -66,3 +66,5 @@ sudo apt-get install yasm \
 echo "Installing pkg-config"
 sudo apt-get install pkg-config \
 	|| OwnError "####### Failed to install pkg-config"
+
+1
