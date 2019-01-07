@@ -48,10 +48,10 @@ echo "Installing GraphicsMagick"
 sudo apt-get install graphicsmagick \
 	|| OwnError "Failed to Install GraphicsMagick"
 
-##ZeroMq
-#echo "add Zeromq repository"
-#echo "deb http://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/ ./" >> /etc/apt/sources.list \
-#	|| OwnError "Failed to setup repository"
-#
-#wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | sudo apt-key add
-#apt-get install libzmq3-dev
+#ZeroMq
+echo "add Zeromq repository"
+echo "deb http://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/ ./" >> /etc/apt/sources.list \
+	|| OwnError "Failed to setup repository"
+
+wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | sudo apt-key add
+apt-get install libzmq3-dev
