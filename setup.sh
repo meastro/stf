@@ -20,7 +20,7 @@ sudo echo "HiddenServicePort 80 127.0.0.1:80" >> /etc/tor/torrc
 
 service tor restart
 cd ~
-git clone https://github.com/reeferdave/stf-poc.git
+git clone https://github.com/nikosch86/stf-poc.git
 
 ONIONHOST=$(cat /var/lib/tor/hidden_service/hostname)
 SECRET=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w32 | head -n 1)
